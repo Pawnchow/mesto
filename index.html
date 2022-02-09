@@ -1,105 +1,179 @@
 <!DOCTYPE html>
 <html lang="ru">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./pages/index.css">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./pages/index.css" />
     <title>Mesto project</title>
-</head>
+  </head>
 
-<body class="page">
+  <body class="page">
     <header class="header">
-        <div class="header__logo"></div>
+      <div class="header__logo"></div>
     </header>
     <main class="main">
-        <section class="profile">
-            <img class="profile__img" src="./images/jak-iv.jpg" alt="Изображение пользователя">
-            <div class="profile__info">
-                <div class="profile__container">
-                    <h1 class="profile__name">Жак-Ив Кусто</h1>
-                    <button class="profile__edit-button" type="button" aria-label="Редактировать профиль"></button>
-                </div>
-                <h2 class="profile__user-text">Исследователь океана</h2>
-            </div>
-            <button class="profile__add-button" type="button" aria-label="Добавить изображение"></button>
-        </section>
+      <section class="profile">
+        <img
+          class="profile__img"
+          src="./images/jak-iv.jpg"
+          alt="Изображение пользователя"
+        />
+        <div class="profile__info">
+          <div class="profile__container">
+            <h1 class="profile__name">Жак-Ив Кусто</h1>
+            <button
+              class="profile__edit-button"
+              type="button"
+              aria-label="Редактировать профиль"
+            ></button>
+          </div>
+          <h2 class="profile__user-text">Исследователь океана</h2>
+        </div>
+        <button
+          class="profile__add-button"
+          type="button"
+          aria-label="Добавить изображение"
+        ></button>
+      </section>
 
-        <section class="photo">
-            <ul class="photo__items">
-                <li class="photo__item">
-                    <figure class="photo__card">
-                        <img class="photo__img" src="./images/photo/1.jfif" alt="Изображение" >
-                        <figcaption class="photo__info">
-                            <h2 class="photo__text">#надиете</h2>
-                            <button class="photo__like" type="button" aria-label="Мне нравится"></button>
-                        </figcaption>
-                    </figure>
-                </li>
-                <li class="photo__item">
-                    <figure class="photo__card">
-                        <img class="photo__img" src="./images/photo/2.jfif" alt="Изображение" >
-                        <figcaption class="photo__info">
-                            <h2 class="photo__text">#магиявнехогвартса</h2>
-                            <button class="photo__like" type="button" aria-label="Мне нравится"></button>
-                        </figcaption>
-                    </figure>
-                </li>
-                <li class="photo__item">
-                    <figure class="photo__card">
-                        <img class="photo__img" src="./images/photo/3.jfif" alt="Изображение" >
-                        <figcaption class="photo__info">
-                            <h2 class="photo__text">#кудагонишьбрат</h2>
-                            <button class="photo__like" type="button" aria-label="Мне нравится"></button>
-                        </figcaption>
-                    </figure>
-                </li>
-                <li class="photo__item">
-                    <figure class="photo__card">
-                        <img class="photo__img" src="./images/photo/4.jfif" alt="Изображение" >
-                        <figcaption class="photo__info">
-                            <h2 class="photo__text">#яумамыинвестор</h2>
-                            <button class="photo__like" type="button" aria-label="Мне нравится"></button>
-                        </figcaption>
-                    </figure>
-                </li>
-                <li class="photo__item">
-                    <figure class="photo__card">
-                        <img class="photo__img" src="./images/photo/5.jfif" alt="Изображение" >
-                        <figcaption class="photo__info">
-                            <h2 class="photo__text">#язабылочки</h2>
-                            <button class="photo__like" type="button" aria-label="Мне нравится"></button>
-                        </figcaption>
-                    </figure>
-                </li>
-                <li class="photo__item">
-                    <figure class="photo__card">
-                        <img class="photo__img" src="./images/photo/6.jfif" alt="Изображение" >
-                        <figcaption class="photo__info">
-                            <h2 class="photo__text">#этиглазанапротив</h2>
-                            <button class="photo__like" type="button" aria-label="Мне нравится"></button>
-                        </figcaption>
-                    </figure>
-                </li>
-            </ul>
-        </section>
+      <section class="photo">
+        <ul class="photo__items">
+          <li class="photo__item">
+            <figure class="photo__card">
+              <img
+                class="photo__img"
+                src="./images/photo/1.jfif"
+                alt="Изображение"
+              />
+              <figcaption class="photo__info">
+                <h2 class="photo__text">#надиете</h2>
+                <button
+                  class="photo__like"
+                  type="button"
+                  aria-label="Мне нравится"
+                ></button>
+              </figcaption>
+            </figure>
+          </li>
+          <li class="photo__item">
+            <figure class="photo__card">
+              <img
+                class="photo__img"
+                src="./images/photo/2.jfif"
+                alt="Изображение"
+              />
+              <figcaption class="photo__info">
+                <h2 class="photo__text">#магиявнехогвартса</h2>
+                <button
+                  class="photo__like"
+                  type="button"
+                  aria-label="Мне нравится"
+                ></button>
+              </figcaption>
+            </figure>
+          </li>
+          <li class="photo__item">
+            <figure class="photo__card">
+              <img
+                class="photo__img"
+                src="./images/photo/3.jfif"
+                alt="Изображение"
+              />
+              <figcaption class="photo__info">
+                <h2 class="photo__text">#кудагонишьбрат</h2>
+                <button
+                  class="photo__like"
+                  type="button"
+                  aria-label="Мне нравится"
+                ></button>
+              </figcaption>
+            </figure>
+          </li>
+          <li class="photo__item">
+            <figure class="photo__card">
+              <img
+                class="photo__img"
+                src="./images/photo/4.jfif"
+                alt="Изображение"
+              />
+              <figcaption class="photo__info">
+                <h2 class="photo__text">#яумамыинвестор</h2>
+                <button
+                  class="photo__like"
+                  type="button"
+                  aria-label="Мне нравится"
+                ></button>
+              </figcaption>
+            </figure>
+          </li>
+          <li class="photo__item">
+            <figure class="photo__card">
+              <img
+                class="photo__img"
+                src="./images/photo/5.jfif"
+                alt="Изображение"
+              />
+              <figcaption class="photo__info">
+                <h2 class="photo__text">#язабылочки</h2>
+                <button
+                  class="photo__like"
+                  type="button"
+                  aria-label="Мне нравится"
+                ></button>
+              </figcaption>
+            </figure>
+          </li>
+          <li class="photo__item">
+            <figure class="photo__card">
+              <img
+                class="photo__img"
+                src="./images/photo/6.jfif"
+                alt="Изображение"
+              />
+              <figcaption class="photo__info">
+                <h2 class="photo__text">#этиглазанапротив</h2>
+                <button
+                  class="photo__like"
+                  type="button"
+                  aria-label="Мне нравится"
+                ></button>
+              </figcaption>
+            </figure>
+          </li>
+        </ul>
+      </section>
     </main>
     <footer class="footer">
-        <p class="footer__copyright">&copy; 2022 Mesto Russia</p>
+      <p class="footer__copyright">&copy; 2022 Mesto Russia</p>
     </footer>
 
-    <div class="popup">
-        <div class="popup__container">
-            <button class="popup__close-button" type="button" aria-label="Закрыть"></button>
-            <form class="popup__form" name="popupForm">
-                <h2 class="popup__title">Редактировать профиль</h2>
-                <input class="popup__input" type="text" name="editName" placeholder="Ваше Имя">
-                <input class="popup__input" type="text" name="editAbout" placeholder="О себе">
-                <button class="popup__save-button" type="submit">Сохранить</button>
-            </form>
-        </div>
-    </div>
+    <section class="popup">
+      <div class="popup__container">
+        <button
+          class="popup__close-button"
+          type="button"
+          aria-label="Закрыть"
+        ></button>
+        <form class="popup__form" name="popupForm">
+          <h2 class="popup__title">Редактировать профиль</h2>
+          <input
+            class="popup__input"
+            type="text"
+            name="editName"
+            placeholder="Ваше Имя"
+          />
+          <input
+            class="popup__input"
+            type="text"
+            name="editAbout"
+            placeholder="О себе"
+          />
+          <button class="popup__save-button" type="submit">Сохранить</button>
+        </form>
+      </div>
+    </section>
 
     <script src="./script/index.js"></script>
-</body>
+  </body>
 </html>
