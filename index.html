@@ -39,123 +39,22 @@
 
       <section class="photo">
         <ul class="photo__items">
-          <li class="photo__item">
-            <figure class="photo__card">
-              <img
-                class="photo__img"
-                src="./images/photo/1.jfif"
-                alt="Изображение"
-              />
-              <figcaption class="photo__info">
-                <h2 class="photo__text">#надиете</h2>
-                <button
-                  class="photo__like"
-                  type="button"
-                  aria-label="Мне нравится"
-                ></button>
-              </figcaption>
-            </figure>
-          </li>
-          <li class="photo__item">
-            <figure class="photo__card">
-              <img
-                class="photo__img"
-                src="./images/photo/2.jfif"
-                alt="Изображение"
-              />
-              <figcaption class="photo__info">
-                <h2 class="photo__text">#магиявнехогвартса</h2>
-                <button
-                  class="photo__like"
-                  type="button"
-                  aria-label="Мне нравится"
-                ></button>
-              </figcaption>
-            </figure>
-          </li>
-          <li class="photo__item">
-            <figure class="photo__card">
-              <img
-                class="photo__img"
-                src="./images/photo/3.jfif"
-                alt="Изображение"
-              />
-              <figcaption class="photo__info">
-                <h2 class="photo__text">#кудагонишьбрат</h2>
-                <button
-                  class="photo__like"
-                  type="button"
-                  aria-label="Мне нравится"
-                ></button>
-              </figcaption>
-            </figure>
-          </li>
-          <li class="photo__item">
-            <figure class="photo__card">
-              <img
-                class="photo__img"
-                src="./images/photo/4.jfif"
-                alt="Изображение"
-              />
-              <figcaption class="photo__info">
-                <h2 class="photo__text">#яумамыинвестор</h2>
-                <button
-                  class="photo__like"
-                  type="button"
-                  aria-label="Мне нравится"
-                ></button>
-              </figcaption>
-            </figure>
-          </li>
-          <li class="photo__item">
-            <figure class="photo__card">
-              <img
-                class="photo__img"
-                src="./images/photo/5.jfif"
-                alt="Изображение"
-              />
-              <figcaption class="photo__info">
-                <h2 class="photo__text">#язабылочки</h2>
-                <button
-                  class="photo__like"
-                  type="button"
-                  aria-label="Мне нравится"
-                ></button>
-              </figcaption>
-            </figure>
-          </li>
-          <li class="photo__item">
-            <figure class="photo__card">
-              <img
-                class="photo__img"
-                src="./images/photo/6.jfif"
-                alt="Изображение"
-              />
-              <figcaption class="photo__info">
-                <h2 class="photo__text">#этиглазанапротив</h2>
-                <button
-                  class="photo__like"
-                  type="button"
-                  aria-label="Мне нравится"
-                ></button>
-              </figcaption>
-            </figure>
-          </li>
         </ul>
       </section>
     </main>
+
     <footer class="footer">
       <p class="footer__copyright">&copy; 2022 Mesto Russia</p>
     </footer>
-
-    <section class="popup">
+    <!-- popup profile -->
+    <section class="popup popup_profile">
       <div class="popup__container">
         <button
-          class="popup__close-button"
+          class="popup__close-button popup__close-button_profile"
           type="button"
           aria-label="Закрыть"
         ></button>
-        <form class="popup__form" name="popupForm">
+        <form class="popup__form popup__form_profile" name="popupForm">
           <h2 class="popup__title">Редактировать профиль</h2>
           <input
             class="popup__input"
@@ -169,11 +68,64 @@
             name="editAbout"
             placeholder="О себе"
           />
-          <button class="popup__save-button" type="submit">Сохранить</button>
+          <button
+            class="popup__save-button"
+            type="submit"
+            aria-label="Сохранить"
+          >
+            Сохранить
+          </button>
         </form>
       </div>
     </section>
-
+    <!-- popup add-photo-->
+    <section class="popup popup_photo">
+      <div class="popup__container">
+        <button
+          class="popup__close-button popup__close-button_photo"
+          type="button"
+          aria-label="Закрыть"
+        ></button>
+        <form class="popup__form popup__form_add-photo" name="newPhotoForm">
+          <h2 class="popup__title">Новое место</h2>
+          <input
+            class="popup__input"
+            type="text"
+            name="cardName"
+            placeholder="Название"
+          />
+          <input
+            class="popup__input"
+            type="url"
+            name="cardLink"
+            placeholder="Ссылка на картинку"
+          />
+          <button class="popup__save-button" type="submit" aria-label="Создать">
+            Создать
+          </button>
+        </form>
+      </div>
+    </section>
+    <!-- photo template-->
+    <template class="photo-template">
+      <li class="photo__item">
+        <figure class="photo__card">
+          <img
+            class="photo__img"
+            src=""
+            alt=""
+          />
+          <figcaption class="photo__info">
+            <h2 class="photo__text"></h2>
+            <button
+              class="photo__like"
+              type="button"
+              aria-label="Мне нравится"
+            ></button>
+          </figcaption>
+        </figure>
+      </li>
+    </template>
     <script src="./script/index.js"></script>
   </body>
 </html>

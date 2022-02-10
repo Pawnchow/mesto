@@ -23,6 +23,7 @@
 @import url(../blocks/photo/__info/photo__info.css);
 @import url(../blocks/photo/__text/photo__text.css);
 @import url(../blocks/photo/__like/photo__like.css);
+@import url(../blocks/photo/__like/_active/photo__like_active.css);
 
 @import url(../blocks/footer/footer.css);
 @import url(../blocks/footer/__copyright/footer__copyright.css);
