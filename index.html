@@ -38,15 +38,14 @@
       </section>
 
       <section class="photo">
-        <ul class="photo__items">
-        </ul>
+        <ul class="photo__items"></ul>
       </section>
     </main>
 
     <footer class="footer">
       <p class="footer__copyright">&copy; 2022 Mesto Russia</p>
     </footer>
-    <!-- popup profile -->
+    <!-- popup edit profile -->
     <section class="popup popup_profile">
       <div class="popup__container">
         <button
@@ -78,7 +77,7 @@
         </form>
       </div>
     </section>
-    <!-- popup add-photo-->
+    <!-- popup add photo -->
     <section class="popup popup_photo">
       <div class="popup__container">
         <button
@@ -106,15 +105,28 @@
         </form>
       </div>
     </section>
-    <!-- photo template-->
+    <!-- popup full photo -->
+    <section class="popup popup__full">
+      <figure class="popup__container_full">
+        <button
+          class="popup__close-button popup__close-button_full"
+          type="button"
+          aria-label="Закрыть"
+        ></button>
+        <img src="" alt="" class="popup__full_img" />
+        <figcaption class="popup__full_text"></figcaption>
+      </figure>
+    </section>
+    <!-- photo template -->
     <template class="photo-template">
       <li class="photo__item">
         <figure class="photo__card">
-          <img
-            class="photo__img"
-            src=""
-            alt=""
-          />
+          <button
+            class="photo__remove"
+            type="button"
+            aria-label="Удалить"
+          ></button>
+          <img class="photo__img" src="" alt="" />
           <figcaption class="photo__info">
             <h2 class="photo__text"></h2>
             <button
