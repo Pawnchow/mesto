@@ -13,9 +13,9 @@ const inputAbout = document.querySelector('input[name="editAbout"]');
 const addButton = document.querySelector(".profile__add-button");
 const photoTemplate = document.querySelector(".photo-template");
 const photoItems = document.querySelector(".photo__items");
-const popupPhotoFull = document.querySelector(".popup__full");
-const photoFullImg = document.querySelector(".popup__full_img");
-const photoFullText = document.querySelector(".popup__full_text");
+const popupPhotoFull = document.querySelector(".popup_full");
+const photoFullImg = document.querySelector(".popup_full_img");
+const photoFullText = document.querySelector(".popup_full_text");
 
 // Initial cards
 const initialCards = [
