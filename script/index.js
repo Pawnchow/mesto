@@ -14,8 +14,8 @@ const addButton = document.querySelector(".profile__add-button");
 const photoTemplate = document.querySelector(".photo-template");
 const photoItems = document.querySelector(".photo__items");
 const popupPhotoFull = document.querySelector(".popup_full");
-const photoFullImg = document.querySelector(".popup_full_img");
-const photoFullText = document.querySelector(".popup_full_text");
+const photoFullImg = document.querySelector(".popup__full-img");
+const photoFullText = document.querySelector(".popup__full-text");
 
 // Initial cards
 const initialCards = [
