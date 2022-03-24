@@ -23,33 +23,6 @@ const photoFullText = document.querySelector(".popup__full-text");
 const cardName = document.querySelector('input[name="cardName"]');
 const cardLink = document.querySelector('input[name="cardLink"]');
 
-// Initial cards
-const initialCards = [
-  {
-    name: "#надиете",
-    link: "./images/photo/1.jfif",
-  },
-  {
-    name: "#магиявнехогвартса",
-    link: "./images/photo/2.jfif",
-  },
-  {
-    name: "#кудагонишьбрат",
-    link: "./images/photo/3.jfif",
-  },
-  {
-    name: "#яумамыинвестор",
-    link: "./images/photo/4.jfif",
-  },
-  {
-    name: "#язабылочки",
-    link: "./images/photo/5.jfif",
-  },
-  {
-    name: "#этиглазанапротив",
-    link: "./images/photo/6.jfif",
-  },
-];
 
 // Функции открытия и закрытия попапов
 const openPopup = (item) => {
@@ -136,7 +109,7 @@ function renderPhotoCard(name, link) {
     openPopup(popupPhotoFull);
   });
   return newPhoto;
-}
+};
 
 // Наполнение страницы стартовыми карточками
 initialCards.forEach(function (item) {
@@ -156,6 +129,7 @@ editButtonProfile.addEventListener("click", function () {
   inputName.value = profileName.textContent;
   inputAbout.value = profileAbout.textContent;
   openPopup(popupProfile);
+  resetValidation(popupProfile);
 });
 
 popupFormProfile.addEventListener("submit", handleProfileFormSubmit);
@@ -163,6 +137,7 @@ popupFormProfile.addEventListener("submit", handleProfileFormSubmit);
 // Обработчики попапа добавления фотографии
 addButton.addEventListener("click", function () {
   openPopup(popupPhoto);
+  resetValidation(popupPhoto);
 });
 
 popupFormPhoto.addEventListener("submit", handlePhotoFormSubmit);

@@ -1,12 +1,4 @@
 //    Валидация форм
-const validationConfig = {
-    formSelector: ".popup__form",
-    inputSelector: ".popup__input",
-    submitButtonSelector: ".popup__save-button",
-    inactiveButtonClass: "popup__save-button_inactive",
-    inputErrorClass: "popup__input-error",
-  };
-  
   const getErrorElement = (formElement, inputElement) => {
     return formElement.querySelector(`#${inputElement.id}-error`);
   };
@@ -43,7 +35,7 @@ const validationConfig = {
     inputList.forEach((inputElement) => {
       inputElement.addEventListener("input", (evt) => {
         checkValidity(formElement, inputElement);
-        toggleButtonState(inputList, submitButtonElement, validationConfig);
+        toggleButtonState(inputList, submitButtonElement);
       });
     });
   };
@@ -78,3 +70,14 @@ const validationConfig = {
   };
   
   enableValidation(validationConfig);
+
+
+// Функция сброса ошибок формы
+const resetValidation = (formElement) => {
+    const inputList = formElement.querySelectorAll(".popup__input");
+    const submitButtonElement = formElement.querySelector(validationConfig.submitButtonSelector);
+    toggleButtonState(inputList, submitButtonElement);
+    inputList.forEach((inputElement) => {
+        hideError(formElement, inputElement);
+    });
+};
