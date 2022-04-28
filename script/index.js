@@ -1,6 +1,6 @@
-import { Card } from './card.js';
+import { Card } from './Card.js';
 import { initialCards, validationConfig } from './constants.js';
-import { FormValidator } from './formValidator.js';
+import { FormValidator } from './FormValidator.js';
 
 const editButtonProfile = document.querySelector(".profile__edit-button");
 const popupProfile = document.querySelector(".popup_profile");
@@ -59,7 +59,7 @@ const closePopupButton = (evt) => {
 };
 
 // Обработчики попапа редактирования профиля
-editButtonProfile.addEventListener('click', function () {
+editButtonProfile.addEventListener('click', () => {
   inputName.value = profileName.textContent;
   inputAbout.value = profileAbout.textContent;
   openPopup(popupProfile);
