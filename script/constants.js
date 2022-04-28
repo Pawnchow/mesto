@@ -1,5 +1,5 @@
 // Initial cards
-const initialCards = [
+export const initialCards = [
     {
       name: "#надиете",
       link: "./images/photo/1.jfif",
@@ -26,7 +26,7 @@ const initialCards = [
     },
 ];
 
-const validationConfig = {
+export const validationConfig = {
     formSelector: ".popup__form",
     inputSelector: ".popup__input",
     submitButtonSelector: ".popup__save-button",
