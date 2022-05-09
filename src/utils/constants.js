@@ -1,28 +1,34 @@
-// Initial cards
+import img1 from "../images/photo/1.jfif";
+import img2 from "../images/photo/2.jfif";
+import img3 from "../images/photo/3.jfif";
+import img4 from "../images/photo/4.jfif";
+import img5 from "../images/photo/5.jfif";
+import img6 from "../images/photo/6.jfif";
+
 export const initialCards = [
     {
       name: "#надиете",
-      link: "./images/photo/1.jfif",
+      link: img1,
     },
     {
       name: "#магиявнехогвартса",
-      link: "./images/photo/2.jfif",
+      link: img2,
     },
     {
       name: "#кудагонишьбрат",
-      link: "./images/photo/3.jfif",
+      link: img3,
     },
     {
       name: "#яумамыинвестор",
-      link: "./images/photo/4.jfif",
+      link: img4,
     },
     {
       name: "#язабылочки",
-      link: "./images/photo/5.jfif",
+      link: img5,
     },
     {
       name: "#этиглазанапротив",
-      link: "./images/photo/6.jfif",
+      link: img6,
     },
 ];
 

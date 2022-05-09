@@ -4,7 +4,6 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="./pages/index.css" />
     <title>Mesto project</title>
   </head>
 
@@ -16,7 +15,7 @@
       <section class="profile">
         <img
           class="profile__img"
-          src="./images/jak-iv.jpg"
+          src="<%=require('./images/jak-iv.jpg')%>"
           alt="Изображение пользователя"
         />
         <div class="profile__info">
@@ -181,9 +180,6 @@
         </figure>
       </li>
     </template>
-    <script type="module" src="./script/constants.js"></script>
-    <script type="module" src="./script/index.js"></script>
-    <script type="module" src="./script/card.js"></script>
-    <script type="module" src="./script/formValidator.js"></script>
+
   </body>
 </html>

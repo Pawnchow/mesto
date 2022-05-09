@@ -1,4 +1,4 @@
-export class Card {
+export default class Card {
     constructor(text, image, cardTemplateSelector, handleCardClick) {
         this._textInput = text;
         this._imageInput = image;
