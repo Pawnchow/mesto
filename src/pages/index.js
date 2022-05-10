@@ -8,20 +8,18 @@ import UserInfo from '../components/UserInfo.js';
 
 import '../pages/index.css'
 
-const editButtonProfile = document.querySelector(".profile__edit-button");
-const profile = document.querySelector(".popup_profile");
-const photo = document.querySelector(".popup_photo");
+const buttonEditProfile = document.querySelector(".profile__edit-button");
+const profile = ".popup_profile";
+const photo = ".popup_photo";
 const profileName = document.querySelector(".profile__name");
 const profileAbout = document.querySelector(".profile__user-text");
 const popupFormProfile = document.querySelector(".popup__form_profile");
 const popupFormPhoto = document.querySelector(".popup__form_add-photo");
 const inputName = document.querySelector('input[name="editName"]');
 const inputAbout = document.querySelector('input[name="editAbout"]');
-const addButton = document.querySelector(".profile__add-button");
-const photoItems = document.querySelector(".photo__items");
-const popupPhotoFull = document.querySelector(".popup_full");
-const cardName = document.querySelector('input[name="cardName"]');
-const cardLink = document.querySelector('input[name="cardLink"]');
+const buttonAdd = document.querySelector(".profile__add-button");
+const photoItems = ".photo__items";
+const popupPhotoFull = ".popup_full";
 
 
 // Включение валидации
@@ -30,39 +28,40 @@ profileFormValidator.enableValidation();
 const photoFormValidator = new FormValidator(validationConfig, popupFormPhoto);
 photoFormValidator.enableValidation();
 
-const userInfo = new UserInfo(profileName, profileAbout);
+const userInfo = new UserInfo({ name: profileName, about: profileAbout });
 
 // Попап профиля
-const popupProfile = new PopupWithForm(profile, { handleFormSubmit: () => {
+const popupProfile = new PopupWithForm(profile, { handleFormSubmit: (input) => {
   userInfo.setUserInfo({
-    name: inputName.value,
-    about: inputAbout.value
+    name: input.editName,
+    about: input.editAbout
   })
 }
 });
 popupProfile.setEventListeners();
 
 // Попап фото
-const popupPhoto = new PopupWithForm(photo, { handleFormSubmit: () => {
+const popupPhoto = new PopupWithForm(photo, { handleFormSubmit: (input) => {
   addPhoto.renderItems([{
-    name: cardName.value,
-    image: cardLink.value
+    name: input.cardName,
+    link: input.cardLink
   }])
 }});
 popupPhoto.setEventListeners();
 
 // Открытие попапа редактирования профиля
-editButtonProfile.addEventListener('click', () => {
-  inputName.value = userInfo.getUserInfo().name;
-  inputAbout.value = userInfo.getUserInfo().about;
+buttonEditProfile.addEventListener('click', () => {
+  const info = userInfo.getUserInfo();
+  inputName.value = info.name;
+  inputAbout.value = info.about;
   popupProfile.open();
   profileFormValidator.resetValidation();
 })
 
 // Открытие попапа добавления фото
-addButton.addEventListener('click', () => {
-  popupPhoto.open();
+buttonAdd.addEventListener('click', () => {
   photoFormValidator.resetValidation();
+  popupPhoto.open();
 });
 
 // Открытие полной фотографии
