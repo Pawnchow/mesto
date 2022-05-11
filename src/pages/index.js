@@ -11,8 +11,6 @@ import '../pages/index.css'
 const buttonEditProfile = document.querySelector(".profile__edit-button");
 const profile = ".popup_profile";
 const photo = ".popup_photo";
-const profileName = document.querySelector(".profile__name");
-const profileAbout = document.querySelector(".profile__user-text");
 const popupFormProfile = document.querySelector(".popup__form_profile");
 const popupFormPhoto = document.querySelector(".popup__form_add-photo");
 const inputName = document.querySelector('input[name="editName"]');
@@ -28,7 +26,7 @@ profileFormValidator.enableValidation();
 const photoFormValidator = new FormValidator(validationConfig, popupFormPhoto);
 photoFormValidator.enableValidation();
 
-const userInfo = new UserInfo({ name: profileName, about: profileAbout });
+const userInfo = new UserInfo({ nameSelector: '.profile__name', aboutSelector: '.profile__user-text' });
 
 // Попап профиля
 const popupProfile = new PopupWithForm(profile, { handleFormSubmit: (input) => {
@@ -54,8 +52,9 @@ buttonEditProfile.addEventListener('click', () => {
   const info = userInfo.getUserInfo();
   inputName.value = info.name;
   inputAbout.value = info.about;
-  popupProfile.open();
   profileFormValidator.resetValidation();
+  popupProfile.open();
+
 })
 
 // Открытие попапа добавления фото

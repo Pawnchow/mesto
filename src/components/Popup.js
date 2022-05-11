@@ -9,17 +9,6 @@ export default class Popup {
             this.close();
         }
     }
-    _closePopupOverlay(evt) {
-        if (evt.target.classList.contains('popup')) {
-        this.close();
-        }
-    }
-
-    _closePopupButton(evt) {
-        if (evt.target.classList.contains('popup__close-button')) {
-          this.close();
-        }
-    }
 
     open() {
         this._popup.classList.add('popup_opened');
@@ -32,7 +21,10 @@ export default class Popup {
     }
 
     setEventListeners() {
-        this._popup.addEventListener('mousedown', this._closePopupOverlay.bind(this));
-        this._popup.addEventListener('mousedown', this._closePopupButton.bind(this));
+        this._popup.addEventListener('mousedown', (evt) => {
+            if (evt.target.classList.contains('popup') || evt.target.classList.contains('popup__close-button')) {
+                this.close()
+            }
+        });
     }
 }
