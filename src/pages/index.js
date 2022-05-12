@@ -1,5 +1,5 @@
 import Card from '../components/Card.js'
-import { initialCards, validationConfig } from '../utils/constants.js';
+import { initialCards, validationConfig, serverOptions } from '../utils/constants.js';
 import FormValidator from '../components/FormValidator.js';
 import Section from '../components/Section.js';
 import PopupWithForm from '../components/PopupWithForm.js';
@@ -7,6 +7,7 @@ import PopupWithImage from '../components/PopupWithImage.js';
 import UserInfo from '../components/UserInfo.js';
 
 import '../pages/index.css'
+import Api from '../components/Api.js';
 
 const buttonEditProfile = document.querySelector(".profile__edit-button");
 const profile = ".popup_profile";
@@ -18,6 +19,31 @@ const inputAbout = document.querySelector('input[name="editAbout"]');
 const buttonAdd = document.querySelector(".profile__add-button");
 const photoItems = ".photo__items";
 const popupPhotoFull = ".popup_full";
+
+
+/* const api = new Api({
+  baseUrl: serverOptions.baseUrl,
+  headers: {
+    authorization: serverOptions.token,
+    'Content-type': 'application/json'
+  }
+})
+
+
+
+*/
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 // Включение валидации

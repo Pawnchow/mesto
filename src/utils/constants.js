@@ -39,3 +39,8 @@ export const validationConfig = {
     inactiveButtonClass: "popup__save-button_inactive",
     inputErrorClass: "popup__input-error",
 };
+
+export const serverOptions = {
+  token: "'e84f36fa-3432-4afc-bd0c-317440cd59c0'",
+  baseUrl: "'https://mesto.nomoreparties.co/v1/cohort-40'"
+}

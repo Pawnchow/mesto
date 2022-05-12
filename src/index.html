@@ -13,11 +13,13 @@
     </header>
     <main class="main">
       <section class="profile">
+        <div class="profile__avatar">
         <img
           class="profile__img"
           src="<%=require('./images/jak-iv.jpg')%>"
           alt="Изображение пользователя"
         />
+        </div>
         <div class="profile__info">
           <div class="profile__container">
             <h1 class="profile__name">Жак-Ив Кусто</h1>
@@ -159,6 +161,29 @@
         <figcaption class="popup__full-text"></figcaption>
       </figure>
     </section>
+    <!-- popup photo delete confirmation -->
+    <section class="popup popup_photo_delete">
+      <div class="popup__container">
+        <button class="popup__close-button popup__close-button_photo" aria-label="Закрыть" type="button"></button>
+        <form class="popup__form popup__form_delete-confirmation" name="photoDeleteForm" novalidate>
+          <h2 class="popup__title">Вы уверены?</h2>
+          <button class="popup__save-button" type="submit" aria-label="Подтвердите удаление фото">Да</button>
+        </form>
+      </div>
+    </section>
+    <!-- popup edit avatar -->
+    <section class="popup popup_avatar_edit">
+      <div class="popup__container">
+        <button class="popup__close-button popup__close-button_avatar" aria-label="Закрыть" type="button"></button>
+        <form class="popup__form popup__form_avatar-edit" name="avatarEdit" novalidate>
+          <label class="popup__input-group">
+            <input class="popup__input" id="avatar" type="url" placeholder="Ссылка на изображение" required>
+            <span class="popup__error avatar-error"></span>
+          </label>
+          <button class="popup__save-button" type="submit" aria-label="Сохранить"></button>
+        </form>
+      </div>
+    </section>
     <!-- photo template -->
     <template class="photo-template">
       <li class="photo__item">
@@ -171,11 +196,14 @@
           <img class="photo__img" src="#" alt="" />
           <figcaption class="photo__info">
             <h2 class="photo__text"></h2>
-            <button
+            <div class="photo__like-wrapper">
+              <button
               class="photo__like"
               type="button"
               aria-label="Мне нравится"
             ></button>
+            <span class="photo__like_counter"></span>
+            </div>
           </figcaption>
         </figure>
       </li>
