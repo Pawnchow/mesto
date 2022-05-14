@@ -2,11 +2,21 @@ export default class Popup {
     constructor(popupSelector) {
         this._popup = document.querySelector(popupSelector);
         this._handleEscClose = this._handleEscClose.bind(this);
+        this._popupButtonSubmit = this._popup.querySelector('.popup__save-button');
     }
     
     _handleEscClose(evt) {
         if (evt.key === 'Escape') {
             this.close();
+        }
+    }
+
+    renderLoading(isLoading, textDefault = 'Сохранить', textLoading = 'Сохранение...') {
+        if(isLoading) {
+            this._popupButtonSubmit.textContent = textLoading;
+        }
+        else {
+            this._popupButtonSubmit.textContent = textDefault;
         }
     }
 

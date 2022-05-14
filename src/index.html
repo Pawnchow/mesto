@@ -14,22 +14,18 @@
     <main class="main">
       <section class="profile">
         <div class="profile__avatar">
-        <img
-          class="profile__img"
-          src="<%=require('./images/jak-iv.jpg')%>"
-          alt="Изображение пользователя"
-        />
+          <img class="profile__img" src="" alt="Изображение пользователя" />
         </div>
         <div class="profile__info">
           <div class="profile__container">
-            <h1 class="profile__name">Жак-Ив Кусто</h1>
+            <h1 class="profile__name"></h1>
             <button
               class="profile__edit-button"
               type="button"
               aria-label="Редактировать профиль"
             ></button>
           </div>
-          <h2 class="profile__user-text">Исследователь океана</h2>
+          <h2 class="profile__user-text"></h2>
         </div>
         <button
           class="profile__add-button"
@@ -162,25 +158,61 @@
       </figure>
     </section>
     <!-- popup photo delete confirmation -->
-    <section class="popup popup_photo_delete">
+    <section class="popup popup_photo-delete">
       <div class="popup__container">
-        <button class="popup__close-button popup__close-button_photo" aria-label="Закрыть" type="button"></button>
-        <form class="popup__form popup__form_delete-confirmation" name="photoDeleteForm" novalidate>
+        <button
+          class="popup__close-button popup__close-button_photo"
+          aria-label="Закрыть"
+          type="button"
+        ></button>
+        <form
+          class="popup__form popup__form_delete-confirmation"
+          name="photoDeleteForm"
+          novalidate
+        >
           <h2 class="popup__title">Вы уверены?</h2>
-          <button class="popup__save-button" type="submit" aria-label="Подтвердите удаление фото">Да</button>
+          <button
+            class="popup__save-button"
+            type="submit"
+            aria-label="Подтвердите удаление фото"
+          >
+            Да
+          </button>
         </form>
       </div>
     </section>
     <!-- popup edit avatar -->
-    <section class="popup popup_avatar_edit">
+    <section class="popup popup_avatar-edit">
       <div class="popup__container">
-        <button class="popup__close-button popup__close-button_avatar" aria-label="Закрыть" type="button"></button>
-        <form class="popup__form popup__form_avatar-edit" name="avatarEdit" novalidate>
+        <button
+          class="popup__close-button popup__close-button_avatar"
+          aria-label="Закрыть"
+          type="button"
+        ></button>
+        <form
+          class="popup__form popup__form_avatar-edit"
+          name="avatarEdit"
+          novalidate
+        >
+          <h2 class="popup__title">Обновить аватар</h2>
           <label class="popup__input-group">
-            <input class="popup__input" id="avatar" type="url" placeholder="Ссылка на изображение" required>
-            <span class="popup__error avatar-error"></span>
+            <input
+              class="popup__input"
+              id="avatar"
+              name="avatar"
+              type="url"
+              placeholder="Ссылка на изображение"
+              required
+            />
+            <span class="popup__error avatar-error" id="avatar-error"></span>
           </label>
-          <button class="popup__save-button" type="submit" aria-label="Сохранить"></button>
+          <button
+            class="popup__save-button"
+            type="submit"
+            aria-label="Сохранить"
+          >
+            Сохранить
+          </button>
         </form>
       </div>
     </section>
@@ -198,16 +230,15 @@
             <h2 class="photo__text"></h2>
             <div class="photo__like-wrapper">
               <button
-              class="photo__like"
-              type="button"
-              aria-label="Мне нравится"
-            ></button>
-            <span class="photo__like_counter"></span>
+                class="photo__like"
+                type="button"
+                aria-label="Мне нравится"
+              ></button>
+              <span class="photo__like_counter"></span>
             </div>
           </figcaption>
         </figure>
       </li>
     </template>
-
   </body>
 </html>
