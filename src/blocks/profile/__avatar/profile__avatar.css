@@ -14,7 +14,7 @@
     left: 0;
     background: rgba(0, 0, 0, .8) url(../../../images/EditAvatar.svg) no-repeat center / 26px 26px;
     opacity: 0;
-    transition: 0.2s
+    transition: 0.2s;
 }
 
 .profile__avatar:hover::before {
