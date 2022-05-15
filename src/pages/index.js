@@ -25,17 +25,8 @@ const buttonAdd = document.querySelector(".profile__add-button");
 const photoItems = ".photo__items";
 const popupPhotoFull = ".popup_full";
 
-/*
- const api = new Api(serverOptions);
-console.log(serverOptions);
-*/
-const api = new Api({
-  baseUrl: 'https://mesto.nomoreparties.co/v1/cohort-40/',
-  headers: {
-    authorization: 'e84f36fa-3432-4afc-bd0c-317440cd59c0',
-    'Content-type': 'application/json'
-  }
-});
+
+const api = new Api(serverOptions)
 
 const userInfo = new UserInfo({ nameSelector: '.profile__name', aboutSelector: '.profile__user-text', avatarSelector: '.profile__img' });
 
@@ -47,8 +38,7 @@ Promise.all([api.getUserInfo(), api.getInitialCards()])
       about: userData.about
     });
     userInfo.setUserAvatar(userData.avatar);
-    //userInfo.setUserId(userData._id);
-    userId = userData._id;
+    userInfo.setUserId(userData._id);
     addPhoto.renderItems(cardData);
   })
   .catch(err => alert(`Ошибка: ${err}`));
@@ -107,15 +97,16 @@ const popupAvatar = new PopupWithForm(avatar, { handleFormSubmit: (input) => {
 popupAvatar.setEventListeners();
 
 // Попап подтверждения удаления
-const popupCardDeleteConfirmation = new PopupWithConfirmation(confirmationDelete, { handleFormSubmit: (cardId) => {
+const popupCardDeleteConfirmation = new PopupWithConfirmation(confirmationDelete, { handleFormSubmit: (data) => {
   popupCardDeleteConfirmation.renderLoading(true, 'Да', 'Удаление...');
-  api.deleteCard(cardId)
+  api.deleteCard(data._id)
     .then(() => {
-      card.handleCardDelete()
-      popupCardDeleteConfirmation.close()
+      tempCard.deleteCard();
+      popupCardDeleteConfirmation.close();
+      tempCard = null;
     })
     .catch(err => alert(`Ошибка: ${err}`))
-    .finally(() => popupCardDeleteConfirmation.renderLoading(false))
+    .finally(() => popupCardDeleteConfirmation.renderLoading(false, 'Да'))
   }
 });
 popupCardDeleteConfirmation.setEventListeners();
@@ -145,153 +136,26 @@ buttonAdd.addEventListener('click', () => {
 const popupFullImg = new PopupWithImage(popupPhotoFull);
 popupFullImg.setEventListeners();
 
-
-// новая попытка
+// Создание карточки
 const createCard = (data) => {
-  const card = new Card(data, api, userId, {
+  const card = new Card(data, api, userInfo.getUserId(), {
     cardTemplateSelector: '.photo-template',
     handleCardClick: () => {
       popupFullImg.open(data);
     },
-    //поправить подтверждение удаления
-    handleCardDeleteConfirmation: () => {
-      popupCardDeleteConfirmation.open()
-    },
-    handleLikesClick: () => {
-      card.handleCardLike()
+    handleDeleteClick: () => {
+      tempCard = card;
+      popupCardDeleteConfirmation.open(data)
     }
   })
   return card.renderCard()
 }
 
-const addPhoto = new Section({ renderer: (item) => {
-  const card = createCard(item);
+// Добавление карточки на страницу
+const addPhoto = new Section({ renderer: (data) => {
+  const card = createCard(data);
   addPhoto.addItem(card);
   }
 }, photoItems);
 
-let userId;
-
-
-
-
-
-
-//новая попытка-2
-/*
-const handleCardDeleteConfirmation = (cardId, card) => {
-  popupCardDeleteConfirmation.open(cardId, card);
-};
-
-const handleLikesUpdate = (cardId, likeButton) => {
-  if(!likeButton.classList.contains('.photo__like_active') {
-    api.addLike(cardId)
-      .then(res => card.upda)
-  })
-};
-*/
-
-
-
-/*
-
-const createCard = (cardId, userId) => {
-  const card = new Card(cardId, userId, text, image, '.photo-template', handleCardClick, handleCardDeleteConfirmation, handleLikesUpdate)
-};
-
-
-
-
-
-
-
-// Создание новой карточки
-const createCard = (text, image) => {
-  const card = new Card(text, image, '.photo-template', handleCardClick);
-  const cardElement = card.renderCard();
-  return cardElement;
-};
-
-
-
-
-
-// Добавление карточки
-const addPhoto = new Section({ renderer: (item) => {
-  const card = createCard(item.name, item.link);
-  addPhoto.addItem(card);
-  }
-},
-photoItems
-);
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// Обработчик лайков
-const handleCardLike = (card) => {
-  if(likeButton.classList.contains('.photo__like_active')) {
-    api.addLike(card._id)
-        .then(res => {
-            likeButton.classList.add('photo__like_active');
-            likeCounter.textContent = res.likes.length
-        })
-        .catch(err => {alert(`Ошибка: ${err}`)})
-  }
-  else {
-    api.deteteLike(card._id)
-        .then(res => {
-            likeButton.classList.remove('photo__like_active');
-            likeCounter.textContent = res.likes.length
-        })
-        .catch(err => {alert(`Ошибка: ${err}`)})
-  }
-}
-
-*/
-
-
-
-
-
-
-////////////////////////////////////////////////////////////////////////////////////////////
-
-/*
-// Создание новой карточки
-const createCard = (text, image) => {
-  const card = new Card(text, image, '.photo-template', handleCardClick);
-  const cardElement = card.renderCard();
-  return cardElement;
-};
-
-// Добавление карточки
-const addPhoto = new Section({ renderer: (item) => {
-    const card = createCard(item.name, item.link);
-    addPhoto.addItem(card);
-    }
-  },
-  photoItems
-);
-
-// Наполнение страницы стартовыми карточками
-addPhoto.renderItems(initialCards);
-
-*/
+let tempCard = null;
